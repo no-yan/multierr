@@ -8,15 +8,15 @@ import (
 )
 
 func ExampleNew() {
-	merr := multierr.New()
+	m := multierr.New()
 
 	reasons := []string{"1st error", "2nd error"}
 	for _, reason := range reasons {
 		err := errors.New(reason)
-		merr.Add(err)
+		m.Add(err)
 	}
 
-	fmt.Println(merr.Err())
+	fmt.Println(m.Err())
 	// Output:
 	// 1st error
 	// 2nd error
